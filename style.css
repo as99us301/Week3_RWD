@@ -52,22 +52,18 @@ table {
 body{
 	text-align: center;
 	font-family: 微軟正黑體;
+	font-weight: bold;
 }
 
 .container{
-	padding: 0 42px 0 42px;
 	max-width: 940px;
-    margin: 0 auto;
+	margin: 0 auto;
 }	
-
-a{
-	display: block;	
-	text-decoration: none;	
-	color: #3F5D45;
-}
 
 img{
 	display: block;
+	max-width: 100%;
+	height: auto;
 }
 
 /*LOGO&導覽列*/
@@ -90,27 +86,27 @@ img{
     display: flex;
 }
 
-.header .navbar li{
-	font-size: 17px;
-	font-weight: bold;
-	line-height: 22px;
-	padding: 9px 30px 9px 30px;
-}
-
-.header .navbar .cart{
-	padding: 9px 0 9px 49px;
-}
-
 .header .hamburger{
 	display: none;
 }
 
-/*Banner圖*/
-.banner {
-	max-width: 100%;
-	height: auto;
-	margin-bottom: 60px;
+.navbar .btn a{
+	font-size: 17px;
+	line-height: 22px;
+	padding: 10px 30px 10px 30px;
+	display: block;	
+	text-decoration: none;	
+	color: #3F5D45;
 }
+
+.navbar .btn a:hover{
+	background: #EAF0ED;
+}
+
+.navbar .cart{
+	padding: 9px 0 9px 49px;
+}
+
 
 
 /*選單&馬卡龍們*/
@@ -119,13 +115,13 @@ img{
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
+	margin-top: 60px;
 }
 
 .main .menu{
 	font-size: 24px;
-	font-weight: bold;
 	line-height: 33px;
-	width: 300px;
+	width: 32%;
 }
 
 .main .menu h1{
@@ -139,7 +135,9 @@ img{
 }
 
 .menu li a{
-	line-height: 33px;
+	display: block;	
+	text-decoration: none;	
+	color: #3F5D45;
 	padding: 14px 0px 14px 0px;
 }
 
@@ -147,17 +145,19 @@ img{
 	background: #EAF0ED;
 }
 
+.main .product{
+	max-width: 66%;
+}
+
 /*馬卡龍們*/
 .product .allItems{
 	display: flex;
 	flex-wrap: wrap;
-	max-width: 620px;
 	justify-content: space-between;
 }
 
 .allItems .listItems{	
 	position: relative;
-	z-index: 1;
 }
 
 .listItems .today{	
@@ -166,14 +166,12 @@ img{
     top: 0px;
 	background: #3F5D45;
 	color: #EAF0ED;
-	z-index: 10;
 }
 
 /*本日精選*/
 .listItems .today p{
 	writing-mode: vertical-lr;
 	font-size: 17px;	
-	font-weight: bold;
 	letter-spacing: 2px;
 	padding: 15px 10px 15px 10px;
 }
@@ -186,41 +184,45 @@ img{
 }
 
 /*品名&價格&加購物車*/
-.allItems .intro{
+
+.allItems .intro {
 	display: flex;
-	justify-content: center;
 }
 
-.allItems .intro li{
+.allItems .intro .name , .allItems .intro .price{
 	color: #3F5D45;
 	font-size: 20px;
 	line-height: 28px;
 	border: 1px solid #EAF0ED;
-	padding: 14px 35px 14px 35px;
+	padding: 14px 33px 14px 33px;
 }
 
 .allItems .intro .price{
-	font-weight: bold;
-	padding: 14px 23px 14px 23px;
+	padding: 14px 24px 14px 24px;
 }
 
 .allItems .listItems .button{
-	font-size: 24px;
+	font-family: 微軟正黑體;
 	font-weight: bold;
+	font-size: 24px;
 	background: #EAF0ED;
 	border: 0;
-	font-family: 微軟正黑體;
 	color: #3F5D45;
 	padding: 16px 90px 16px 90px;
 	margin-bottom: 20px;
 	cursor: pointer;
 }
 
+.allItems .listItems .button:hover{
+	background: #3F5D45;
+	color: #EAF0ED;
+}
+
 /*第幾頁*/
 .pages {
 	display: flex;
 	justify-content: flex-end;
-	margin-bottom: 60px;
+	margin: 30px 0 60px 0;
 }
 
 .pages li{
@@ -233,6 +235,9 @@ img{
 }
 
 .pages .number a{	
+	display: block;	
+	text-decoration: none;	
+	color: #3F5D45;
 	padding: 19px 27px 19px 27px;
 }
 
@@ -357,14 +362,8 @@ img{
 
 /*今天是個吃甜點的好日子*/
 .aboutUs .shopInfo .slogan{
-	font-size: 24px;
-    font-weight: 900;
-    line-height: 29px;
-    color: #3F5D45;
-    writing-mode: vertical-rl;
-	letter-spacing: 2px;
-	text-align: start;
-	margin-top: 30px;
+	width: 70px;
+	margin-top: 38px;
 }
 
 /*FB跟LINE*/
@@ -393,20 +392,27 @@ img{
 }
 
 /*RWD*/
-@media(max-width: 1024px){
+@media(max-width: 975px){
+	.container{
+		max-width: 95%;
+	}
 	.main{
 		justify-content: space-around;
 	}
 
-	.product .allItems{
-		flex-direction: column;
-		align-items: center;
+	.main .menu{
+		width: 300px;
 	}
-	.aboutUs{
-		max-width: 100%;
+
+	.main .product{
+		max-width: 330px;
 	}
+	
+	.pages {
+		justify-content: center;
+	}
+
 	.subscribe , .aboutUs {
-		max-width: 100%;
 		padding: 0 8% 0 8%;
 	}
 	.subscribe .mailForm input{
@@ -416,6 +422,9 @@ img{
 
 @media(max-width: 768px){
 
+	.container{
+		max-width: 100%;
+	}
 	.header .hamburger{
 		display: block;
 	}
@@ -437,20 +446,16 @@ img{
 		padding: 0;
 	}
 	
-	.main{
-		flex-direction: column;
-		align-items: center;
-	}
-
 	.main .menu{
 		width: 100%;
-		margin-bottom: 30px;
+		margin-bottom: 60px;
 	}
-	.product .allItems{
-		flex-direction: row;
+
+	.main .product{
+		max-width: 85%;
 	}
+
 	.pages {
-		margin-bottom: 30px;
 		justify-content: center;
 	}
 	
@@ -464,9 +469,21 @@ img{
 }
 
 @media(max-width: 721px){
-	.product .allItems{
-		flex-direction: column;
+	.main{
+		margin-top: 0px;
 	}
+
+	.main .menu{
+		margin-bottom: 30px;
+	}
+	.main .allItems{
+		justify-content: center;
+	}
+
+	.pages{
+		margin: 15px 0 30px 0;
+	}
+
 	.subscribe {
 		justify-content: center;
 	}
@@ -476,13 +493,10 @@ img{
 }
 
 @media(max-width: 425px){
+
 	.aboutUs .slogan{
 		display: none;
 	}
-	.product .allItems {
-		justify-content: center;
-	}
-
 
 	.aboutUs{
 		margin-left: 5%;
